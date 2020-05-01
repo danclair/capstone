@@ -1,0 +1,9 @@
+{
+  id: @event.id,
+  title: @event.title,
+  description: @event.description,
+  date: @event.date,
+  time: @event.time,
+  location: @event.location,
+# user_id: current_user,
+}

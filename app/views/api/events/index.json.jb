@@ -1,0 +1,13 @@
+@events.map do |event|
+  {
+    id: event.id,
+    title: event.title,
+    description: event.description,
+    date: event.date,
+    time: event.time,
+    location: event.location,
+    user_id: event.user_id,
+    created_at: event.created_at,
+    updated_at: event.updated_at,
+  }
+end
