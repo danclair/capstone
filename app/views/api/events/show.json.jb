@@ -5,5 +5,5 @@
   date: @event.date,
   time: @event.time,
   location: @event.location,
-# user_id: current_user,
+  user_id: @event.user_id,
 }
