@@ -9,5 +9,16 @@ Rails.application.routes.draw do
     get "/events/:id" => "events#show"
     patch "/events/:id" => "events#update"
     delete "/events/:id" => "events#destroy"
+
+    post "/users" => "users#create"
+    post "/sessions" => "sessions#create"
+
+    get "/vehicles" => "vehicles#index"
+    post "/vehicles" => "vehicles#create"
+    get "/vehicles/:id" => "vehicles#show"
+    patch "/vehicles/:id" => "vehicles#update"
+    delete "/vehicles/:id" => "vehicles#destroy"
+
+    get "/"
   end
 end

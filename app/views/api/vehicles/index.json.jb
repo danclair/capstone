@@ -1,0 +1,13 @@
+@vehicles.map do |vehicle|
+  {
+    id: vehicle.id,
+    nickname: vehicle.nickname,
+    make: vehicle.make.manufacturer,
+    vehicle_model: vehicle.vehicle_model.name,
+    year: vehicle.year,
+    owner: vehicle.owner,
+    color: vehicle.color,
+    trim: vehicle.trim.name,
+    user_id: vehicle.user_id,
+  }
+end
