@@ -6,4 +6,5 @@
   time: @event.time,
   location: @event.location,
   user_id: @event.user_id,
+  users: @event.users,
 }

@@ -10,6 +10,7 @@ Rails.application.routes.draw do
     patch "/events/:id" => "events#update"
     delete "/events/:id" => "events#destroy"
 
+    get "/users" => "users#index"
     post "/users" => "users#create"
     post "/sessions" => "sessions#create"
 
@@ -19,6 +20,14 @@ Rails.application.routes.draw do
     patch "/vehicles/:id" => "vehicles#update"
     delete "/vehicles/:id" => "vehicles#destroy"
 
-    get "/"
+    get "/comments" => "comments#index"
+    post "/comments" => "comments#create"
+    get "/comments/:id" => "comments#show"
+    patch "/comments/:id" => "comments#update"
+    delete "/comments/:id" => "comments#destroy"
+
+    get "/event_users" => "event_users#index"
+    post "/event_users" => "event_users#create"
+    delete "/event_users/:id" => "event_users#destroy"
   end
 end
