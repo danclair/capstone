@@ -11,8 +11,9 @@ User.create!({ email: "bob@example.com", first_name: "Bob", last_name: "Currie",
 User.create!({ email: "moira@example.com", first_name: "Moira", last_name: "Rose", password: "password" })
 User.create!({ email: "johnny@example.com", first_name: "Johnny", last_name: "Sprockets", password: "password" })
 
-Event.create!({ title: "Saturday Meetup", description: "Let's all get together and hang and drive", date: "5/2/20", time: "10:00 AM", location: "Costco parking lot", user_id: 1 })
-Event.create!({ title: "Coffee time", description: "We'll get charged up while our cars do, too!", date: "6/3/20", time: "7:00 AM", location: "Starbucks", user_id: 3 })
+Event.create!({ title: "Saturday Meetup", description: "Let's all get together and hang and drive", date: "2020-05-02", time: "10:00 AM", location: "Costco parking lot", image: "https://i0.wp.com/www.clovisroundup.com/wp-content/uploads/2019/07/Costco-new.jpg", user_id: 1 })
+Event.create!({ title: "Coffee time", description: "We'll get charged up while our cars do, too!", date: "2020-06-03", time: "7:00 AM", location: "Starbucks", image: "https://media-cdn.tripadvisor.com/media/photo-s/07/08/25/f9/exterior-from-parking.jpg", user_id: 3 })
+Event.create!({ title: "Driving all around", description: "We'll drive until our cars run out of juice!", date: "2020-05-18", time: "12:00 PM", location: "Columbus Drive", image: "https://media.timeout.com/images/102836817/image.jpg", user_id: 2 })
 
 EventUser.create!({ event_id: 2, user_id: 2, role: "host" })
 EventUser.create!({ event_id: 1, user_id: 2, role: "attendee" })
