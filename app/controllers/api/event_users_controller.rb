@@ -7,7 +7,7 @@ class Api::EventUsersController < ApplicationController
   def create
     @event_user = EventUser.new(
       event_id: params[:event_id],
-      user_id: params[:user_id],
+      user_id: current_user.id,
       role: params[:role],
     )
     if @event_user.save
