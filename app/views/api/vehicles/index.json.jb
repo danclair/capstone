@@ -8,6 +8,7 @@
     owner: vehicle.owner,
     color: vehicle.color,
     trim: vehicle.trim_id,
+    image: vehicle.image,
     user_id: vehicle.user_id,
   }
 end

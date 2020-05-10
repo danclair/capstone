@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   # EXAMPLE HTML ROUTE
   get "/events" => "events#index"
+  get "/events/new" => "events#new"
 
   # EXAMPLE JSON ROUTE WITH API NAMESPACE
   namespace :api do

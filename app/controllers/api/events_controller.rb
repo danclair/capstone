@@ -11,7 +11,8 @@ class Api::EventsController < ApplicationController
       date: params[:date],
       time: params[:time],
       location: params[:location],
-      user_id: params[:user_id],
+      image: params[:image],
+      user_id: current_user.id,
     )
     if @event.save
       render "show.json.jb"
@@ -32,6 +33,7 @@ class Api::EventsController < ApplicationController
     @event.date = params[:date] || @event.date
     @event.time = params[:time] || @event.time
     @event.location = params[:location] || @event.location
+    @event.image = params[:image] || @event.image
     if @event.save
       render "show.json.jb"
     else
