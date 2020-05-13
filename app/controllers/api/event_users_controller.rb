@@ -5,7 +5,7 @@ class Api::EventUsersController < ApplicationController
   end
 
   def create
-    @event_user = EventUser.new(
+    @event_user = EventUser.find_or_initialize_by(
       event_id: params[:event_id],
       user_id: current_user.id,
       role: params[:role],
@@ -18,7 +18,11 @@ class Api::EventUsersController < ApplicationController
   end
 
   def destroy
-    event_user = EventUser.find_by(id: params[:id])
+    if params[:event_id]
+      event_user = EventUser.find_by(event_id: params[:event_id], user_id: current_user.id)
+    else
+      event_user = EventUser.find_by(id: params[:id])
+    end
     event_user.destroy
     render json: { message: "EventUser successfully destroyed" }
   end

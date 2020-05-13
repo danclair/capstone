@@ -9,6 +9,13 @@
   user_id: @event.user_id,
   users: @event.users,
   is_owner: @event.user_id == current_user.id,
-  comments: @event.comments,
+  comments: @event.comments.map do |comment|
+    {
+      id: comment.id,
+      text: comment.text,
+      first_name: comment.user.first_name,
+      last_name: comment.user.last_name,
+    }
+  end,
 
 }
