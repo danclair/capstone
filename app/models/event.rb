@@ -4,6 +4,7 @@ class Event < ApplicationRecord
   belongs_to :user
   has_many :event_users
   has_many :users, through: :event_users
+  has_many :comments
   # make a method that loops through users and grabs their vehicles
 
   def friendly_date
@@ -11,6 +12,6 @@ class Event < ApplicationRecord
   end
 
   def friendly_time
-    time.strftime("%I:%M%P")
+    time.strftime("%l:%M%P")
   end
 end

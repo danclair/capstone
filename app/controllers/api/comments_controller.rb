@@ -37,4 +37,10 @@ class Api::CommentsController < ApplicationController
     comment.destroy
     render json: { message: "Comment successfully destroyed" }
   end
+
+  # comments = []
+  # @event.comments.each do |comment|
+  #   comment[‘user’] = comment.user
+  #   comments << comment
+  # end
 end
