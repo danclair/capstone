@@ -8,7 +8,7 @@ class Api::CommentsController < ApplicationController
     @comment = Comment.new(
       text: params[:text],
       event_id: params[:event_id],
-      user_id: params[:user_id],
+      user_id: current_user.id,
     )
     if @comment.save
       render "show.json.jb"
@@ -37,10 +37,4 @@ class Api::CommentsController < ApplicationController
     comment.destroy
     render json: { message: "Comment successfully destroyed" }
   end
-
-  # comments = []
-  # @event.comments.each do |comment|
-  #   comment[‘user’] = comment.user
-  #   comments << comment
-  # end
 end
