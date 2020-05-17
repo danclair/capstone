@@ -1,0 +1,25 @@
+{
+  user: current_user.first_name
+  vehicles: @user.vehicles.map do |vehicle|
+    {
+      id: vehicle.id,
+      nickname: vehicle.nickname,
+      make: vehicle.make_id,
+      vehicle_model: vehicle.vehicle_model_id,
+      year: vehicle.year,
+      owner: vehicle.owner,
+      
+      color: vehicle.color,
+      trim: vehicle.trim_id,
+      image: vehicle.image,
+    }
+  comments: @event.comments.map do |comment|
+    {
+      id: comment.id,
+      text: comment.text,
+      first_name: comment.user.first_name,
+      last_name: comment.user.last_name,
+    }
+  end,
+}
+# CHANGE ALL THAT TO BE VEHICLES, AND ADD THE OTHER THINGS THE SHOW.JSON.JB WOULD NEED

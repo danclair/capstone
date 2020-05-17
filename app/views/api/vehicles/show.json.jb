@@ -8,5 +8,15 @@
   color: @vehicle.color,
   trim: @vehicle.trim_id,
   image: @vehicle.image,
-  user_id: @vehicle.user_id,
+  user_id: @vehicle.user,
+  owner: @vehicle.user.map do |owner|
+    {
+      first_name: vehicle.owner.first_name,
+    }
+  end,
+  user: @vehicle.user.map do |user|
+    {
+      first_name: vehicle.user.first_name,
+    }
+  end,
 }

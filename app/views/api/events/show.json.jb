@@ -15,6 +15,7 @@
       text: comment.text,
       first_name: comment.user.first_name,
       last_name: comment.user.last_name,
+      posted: comment.friendly_posted,
     }
   end,
 

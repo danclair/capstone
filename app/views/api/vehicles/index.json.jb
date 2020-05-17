@@ -2,13 +2,14 @@
   {
     id: vehicle.id,
     nickname: vehicle.nickname,
-    make: vehicle.make_id,
-    vehicle_model: vehicle.vehicle_model_id,
+    make: vehicle.make,
+    vehicle_model: vehicle.vehicle_model,
     year: vehicle.year,
     owner: vehicle.owner,
     color: vehicle.color,
-    trim: vehicle.trim_id,
+    trim: vehicle.trim,
     image: vehicle.image,
     user_id: vehicle.user_id,
+    user: vehicle.user.first_name,
   }
 end

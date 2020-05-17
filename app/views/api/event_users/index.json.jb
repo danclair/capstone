@@ -2,6 +2,9 @@
   {
     id: event_user.id,
     event_id: event_user.event_id,
+    event: event_user.event,
+    date: event_user.event.friendly_date,
+    time: event_user.event.friendly_time,
     user_id: event_user.user_id,
     role: event_user.role,
   }

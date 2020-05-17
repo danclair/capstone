@@ -1,6 +1,9 @@
 class Api::VehiclesController < ApplicationController
   def index
     @vehicles = Vehicle.all
+    if params[:owner]
+      @vehicles = @vehicles.where(user_id: current_user.id)
+    end
     render "index.json.jb"
   end
 

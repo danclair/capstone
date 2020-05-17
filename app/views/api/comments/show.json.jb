@@ -1,6 +1,7 @@
 {
   id: @comment.id,
   text: @comment.text,
+  posted: @comment.friendly_posted,
   user_id: @comment.user_id,
   event_id: @comment.event_id,
 }
