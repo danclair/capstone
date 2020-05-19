@@ -4,13 +4,16 @@
     {
       id: vehicle.id,
       nickname: vehicle.nickname,
-      make: vehicle.make_id,
-      vehicle_model: vehicle.vehicle_model_id,
+      make_id: vehicle.make_id,
+      vehicle_model_id: vehicle.vehicle_model_id,
+      trim_id: vehicle.trim_id,
+      make: vehicle.make,
+      vehicle_model: vehicle.vehicle_model,
+      trim: vehicle.trim,
       year: vehicle.year,
       owner: vehicle.owner,
-      
+
       color: vehicle.color,
-      trim: vehicle.trim_id,
       image: vehicle.image,
     }
   comments: @event.comments.map do |comment|
@@ -22,4 +25,4 @@
     }
   end,
 }
-# CHANGE ALL THAT TO BE VEHICLES, AND ADD THE OTHER THINGS THE SHOW.JSON.JB WOULD NEED
+

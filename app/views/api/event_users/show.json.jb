@@ -3,4 +3,5 @@
   event_id: @event_user.event_id,
   user_id: @event_user.user_id,
   role: @event_user.role,
+  user: @event_user.user,
 }

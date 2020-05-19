@@ -9,6 +9,13 @@
   user_id: @event.user_id,
   users: @event.users,
   is_owner: @event.user_id == current_user.id,
+  # vehicles: @event.users.vehicles.map do |vehicle|
+  #   {
+  #     make: vehicle.make,
+  #     model: vehicle.model,
+  #     image: vehicle.image,
+  #   }
+  # end,
   comments: @event.comments.map do |comment|
     {
       id: comment.id,
@@ -18,5 +25,4 @@
       posted: comment.friendly_posted,
     }
   end,
-
 }
