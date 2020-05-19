@@ -7,15 +7,22 @@
   location: @event.location,
   image: @event.image,
   user_id: @event.user_id,
-  users: @event.users,
+  users: @event.users.map do |user|
+    {
+      id: user.id,
+      first_name: user.first_name,
+      last_name: user.last_name,
+      vehicles: user.vehicles.map do |vehicle|
+        {
+          make: vehicle.make,
+          vehicle_model: vehicle.vehicle_model,
+          image: vehicle.image,
+        }
+      end,
+
+    }
+  end,
   is_owner: @event.user_id == current_user.id,
-  # vehicles: @event.users.vehicles.map do |vehicle|
-  #   {
-  #     make: vehicle.make,
-  #     model: vehicle.model,
-  #     image: vehicle.image,
-  #   }
-  # end,
   comments: @event.comments.map do |comment|
     {
       id: comment.id,
