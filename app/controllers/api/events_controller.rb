@@ -29,9 +29,12 @@ class Api::EventsController < ApplicationController
   end
 
   def update
-    response = Cloudinary::Uploader.upload(params[:image])
-    cloudinary_url = response["secure_url"]
-    # GET RID OF ^THAT^ IF CLOUDINARY DOESN'T WORK?
+    if params[:image] != ""
+      response = Cloudinary::Uploader.upload(params[:image])
+      cloudinary_url = response["secure_url"]
+    else
+      cloudinary_url = nil
+    end
     @event = Event.find_by(id: params[:id], user_id: current_user.id)
     @event.title = params[:title] || @event.title
     @event.description = params[:description] || @event.description
